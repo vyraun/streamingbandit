@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Welcome to StreamingBandit’s documentation! &mdash; StreamingBandit 0.0.1 documentation</title>
+    <title>Statistics API &mdash; StreamingBandit 0.0.1 documentation</title>
     
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -23,8 +23,9 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="StreamingBandit 0.0.1 documentation" href="#" />
-    <link rel="next" title="Core API" href="core.html" />
+    <link rel="top" title="StreamingBandit 0.0.1 documentation" href="index.html" />
+    <link rel="next" title="Admin API" href="admin.html" />
+    <link rel="prev" title="Core API" href="core.html" />
    
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
@@ -37,24 +38,29 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="welcome-to-streamingbandit-s-documentation">
-<h1>Welcome to StreamingBandit&#8217;s documentation!<a class="headerlink" href="#welcome-to-streamingbandit-s-documentation" title="Permalink to this headline">¶</a></h1>
-<p>Documentation:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="core.html">Core API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="stats.html">Statistics API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="admin.html">Admin API</a></li>
+  <div class="section" id="statistics-api">
+<h1>Statistics API<a class="headerlink" href="#statistics-api" title="Permalink to this headline">¶</a></h1>
+<dl class="get">
+<dt id="get-(?i)-stats-([0-9]+)-getcurrenttheta.json">
+<code class="descname">GET </code><code class="descname">(?i)/stats/([0-9]+)/getcurrenttheta.json</code><a class="headerlink" href="#get-(?i)-stats-([0-9]+)-getcurrenttheta.json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the current theta for experiment id exp_id</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>exp_id</strong> (<em>int</em>) &#8211; The specific experiment id</li>
 </ul>
-</div>
-</div>
-<div class="section" id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><a class="reference internal" href="genindex.html"><span>Index</span></a></li>
-<li><a class="reference internal" href="py-modindex.html"><span>Module Index</span></a></li>
-<li><a class="reference internal" href="search.html"><span>Search Page</span></a></li>
-</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Returns dict theta:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first last">The current theta</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 </div>
 
 
@@ -63,24 +69,25 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="#">Table Of Contents</a></h3>
-  <ul>
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="core.html">Core API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="stats.html">Statistics API</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Statistics API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="admin.html">Admin API</a></li>
 </ul>
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
-  <li><a href="#">Documentation overview</a><ul>
-      <li>Next: <a href="core.html" title="next chapter">Core API</a></li>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="core.html" title="previous chapter">Core API</a></li>
+      <li>Next: <a href="admin.html" title="next chapter">Admin API</a></li>
   </ul></li>
 </ul>
 </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/index.txt"
+      <li><a href="_sources/stats.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -109,7 +116,7 @@
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.6</a>
       
       |
-      <a href="_sources/index.txt"
+      <a href="_sources/stats.txt"
           rel="nofollow">Page source</a>
     </div>
 

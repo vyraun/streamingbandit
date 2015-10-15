@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Core API &mdash; StreamingBandit 0.0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="StreamingBandit 0.0.1 documentation" href="index.html" />
+    <link rel="next" title="Statistics API" href="stats.html" />
+    <link rel="prev" title="Welcome to StreamingBandit’s documentation!" href="index.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+  </head>
+  <body role="document">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="core-api">
+<h1>Core API<a class="headerlink" href="#core-api" title="Permalink to this headline">¶</a></h1>
+<dl class="get">
+<dt id="get-(?i)-([0-9]+)-getaction.json">
+<code class="descname">GET </code><code class="descname">(?i)/([0-9]+)/getaction.json</code><a class="headerlink" href="#get-(?i)-([0-9]+)-getaction.json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get an action given a context for a specific exp_id</p>
+<p>Input arguments:
+exp_id: Experiment ID as specified in the url
+context: string of JSON object which obtains the context. This is assumed to be passed in the query string 
+key: part of the JSON object</p>
+<p>Returns:
+A JSON object containing &#8220;action&#8221;: XX
+Or an object containing &#8220;error&#8221;: ...</p>
+</dd></dl>
+
+<dl class="get">
+<dt id="get-(?i)-([0-9]+)-setreward.json">
+<code class="descname">GET </code><code class="descname">(?i)/([0-9]+)/setreward.json</code><a class="headerlink" href="#get-(?i)-([0-9]+)-setreward.json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the parameters for a given experiment</p>
+<p>Input arguments:
+exp_id: Experiment ID as specified in the url
+context: in JSON get
+action: in JSON get
+reward: in JSON get
+key: in JSON get</p>
+<p>Returns:
+A JSON object containing &#8220;status&#8221;:true
+Or an object containing &#8220;error&#8221;: ...</p>
+</dd></dl>
+
+<dl class="get">
+<dt id="get-(?i)-([0-9]+)-gettheta.json">
+<code class="descname">GET </code><code class="descname">(?i)/([0-9]+)/gettheta.json</code><a class="headerlink" href="#get-(?i)-([0-9]+)-gettheta.json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get an action given a context for a specific exp_id</p>
+<p>Input arguments:
+exp_id: Experiment ID as specified in the url
+context: string of JSON object which obtains the context. This is assumed to be passed in the query string 
+key: part of the JSON object</p>
+<p>Returns:
+A JSON object containing &#8220;action&#8221;: XX
+Or an object containing &#8220;error&#8221;: ...</p>
+</dd></dl>
+
+<dl class="get">
+<dt id="get-(?i)-([0-9]+)-settheta.json">
+<code class="descname">GET </code><code class="descname">(?i)/([0-9]+)/settheta.json</code><a class="headerlink" href="#get-(?i)-([0-9]+)-settheta.json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the parameters for a given experiment</p>
+<p>Input arguments:
+exp_id: Experiment ID as specified in the url
+context: in JSON get
+action: in JSON get
+reward: in JSON get
+key: in JSON get</p>
+<p>Returns:
+A JSON object containing &#8220;status&#8221;:true
+Or an object containing &#8220;error&#8221;: ...</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">Core API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stats.html">Statistics API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin.html">Admin API</a></li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Welcome to StreamingBandit&#8217;s documentation!</a></li>
+      <li>Next: <a href="stats.html" title="next chapter">Statistics API</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/core.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2015, M.C. Kaptein, J.M.A. Kruijswijk.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.6</a>
+      
+      |
+      <a href="_sources/core.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
