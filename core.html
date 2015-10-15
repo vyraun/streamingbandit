@@ -41,59 +41,84 @@
   <div class="section" id="core-api">
 <h1>Core API<a class="headerlink" href="#core-api" title="Permalink to this headline">¶</a></h1>
 <dl class="get">
-<dt id="get-(?i)-([0-9]+)-getaction.json">
-<code class="descname">GET </code><code class="descname">(?i)/([0-9]+)/getaction.json</code><a class="headerlink" href="#get-(?i)-([0-9]+)-getaction.json" title="Permalink to this definition">¶</a></dt>
+<dt id="get-(?i)-(?P-exp_id-[0-9]+)-getaction.json">
+<code class="descname">GET </code><code class="descname">(?i)/(?P&lt;exp_id&gt;[0-9]+)/getaction.json</code><a class="headerlink" href="#get-(?i)-(?P-exp_id-[0-9]+)-getaction.json" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get an action given a context for a specific exp_id</p>
-<p>Input arguments:
-exp_id: Experiment ID as specified in the url
-context: string of JSON object which obtains the context. This is assumed to be passed in the query string 
-key: part of the JSON object</p>
-<p>Returns:
-A JSON object containing &#8220;action&#8221;: XX
-Or an object containing &#8220;error&#8221;: ...</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Example</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http://example.com/1/getAction.json">http://example.com/1/getAction.json</a>?key=XXXX&amp;context={&#8216;age&#8217;: 25}</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>exp_id</strong> (<em>int</em>) &#8211; Experiment ID as specified in the url</li>
+<li><strong>context</strong> (<em>JSON</em>) &#8211; The context to be evaluated.</li>
+<li><strong>key</strong> (<em>string</em>) &#8211; The key corresponding to the experiment.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A JSON of the form: {&#8220;action&#8221;: XX}</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Raises AuthErorr:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><p class="first last">401 Invalid key</p>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="get">
-<dt id="get-(?i)-([0-9]+)-setreward.json">
-<code class="descname">GET </code><code class="descname">(?i)/([0-9]+)/setreward.json</code><a class="headerlink" href="#get-(?i)-([0-9]+)-setreward.json" title="Permalink to this definition">¶</a></dt>
+<dt id="get-(?i)-(?P-exp_id-[[0-9]+)-setreward.json">
+<code class="descname">GET </code><code class="descname">(?i)/(?P&lt;exp_id&gt;[[0-9]+)/setreward.json</code><a class="headerlink" href="#get-(?i)-(?P-exp_id-[[0-9]+)-setreward.json" title="Permalink to this definition">¶</a></dt>
 <dd><p>Update the parameters for a given experiment</p>
-<p>Input arguments:
-exp_id: Experiment ID as specified in the url
-context: in JSON get
-action: in JSON get
-reward: in JSON get
-key: in JSON get</p>
-<p>Returns:
-A JSON object containing &#8220;status&#8221;:true
-Or an object containing &#8220;error&#8221;: ...</p>
-</dd></dl>
-
-<dl class="get">
-<dt id="get-(?i)-([0-9]+)-gettheta.json">
-<code class="descname">GET </code><code class="descname">(?i)/([0-9]+)/gettheta.json</code><a class="headerlink" href="#get-(?i)-([0-9]+)-gettheta.json" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get an action given a context for a specific exp_id</p>
-<p>Input arguments:
-exp_id: Experiment ID as specified in the url
-context: string of JSON object which obtains the context. This is assumed to be passed in the query string 
-key: part of the JSON object</p>
-<p>Returns:
-A JSON object containing &#8220;action&#8221;: XX
-Or an object containing &#8220;error&#8221;: ...</p>
-</dd></dl>
-
-<dl class="get">
-<dt id="get-(?i)-([0-9]+)-settheta.json">
-<code class="descname">GET </code><code class="descname">(?i)/([0-9]+)/settheta.json</code><a class="headerlink" href="#get-(?i)-([0-9]+)-settheta.json" title="Permalink to this definition">¶</a></dt>
-<dd><p>Update the parameters for a given experiment</p>
-<p>Input arguments:
-exp_id: Experiment ID as specified in the url
-context: in JSON get
-action: in JSON get
-reward: in JSON get
-key: in JSON get</p>
-<p>Returns:
-A JSON object containing &#8220;status&#8221;:true
-Or an object containing &#8220;error&#8221;: ...</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Example</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http://example.com/1/setReward.json">http://example.com/1/setReward.json</a>?key=XXXX&amp;context={&#8216;age&#8217;: 25}
+&amp;action={&#8216;action&#8217;:&#8217;A&#8217;}&amp;reward={&#8216;click&#8217;:1}</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>exp_id</strong> (<em>int</em>) &#8211; Experiment ID as specified in the url</li>
+<li><strong>context</strong> (<em>JSON</em>) &#8211; The context to train on.</li>
+<li><strong>action</strong> (<em>JSON</em>) &#8211; The action to train on.</li>
+<li><strong>reward</strong> (<em>JSON</em>) &#8211; The reward for the experiment.</li>
+<li><strong>key</strong> (<em>string</em>) &#8211; The key corresponding to the experiment.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A JSON of the form: {&#8220;status&#8221;:true}</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Raises KeyError:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><p class="first last">400 Error if Key is not valid.</p>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </div>

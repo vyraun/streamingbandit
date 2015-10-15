@@ -1,6 +1,8 @@
 Welcome to StreamingBandit's documentation!
 ===========================================
 
+The documentation and the code is still under development.
+For any information contact the authors.
 
 Documentation:
 
@@ -11,11 +13,17 @@ Documentation:
    Statistics API <stats>
    Admin API <admin>
 
+Changelog
+=========
++------------+---------+------------------------------------------------------+
+| Date       | Version | Changelog                                            |
++============+=========+======================================================+
+| 15-10-2015 | 0.0.1   | First version not completely available yet.          |
++------------+---------+------------------------------------------------------+
 
-Indices and tables
-==================
+Authors
+=======
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+Maurits Kaptein (``maurits at mauritskaptein dot com``)
 
+Jules Kruijswijk (``jmakruijswijk at hotmail dot com``)

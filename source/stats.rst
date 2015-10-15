@@ -2,4 +2,4 @@ Statistics API
 ==============
 
 .. autotornado:: app:application
-   :endpoints: GetCurrentTheta.get, GetHourlyTheta.get. 
+   :endpoints: GetCurrentTheta.get, GetHourlyTheta.get 

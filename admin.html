@@ -39,6 +39,265 @@
             
   <div class="section" id="admin-api">
 <h1>Admin API<a class="headerlink" href="#admin-api" title="Permalink to this headline">¶</a></h1>
+<dl class="post">
+<dt id="post-(?i)-admin-exp-add.json">
+<code class="descname">POST </code><code class="descname">(?i)/admin/exp/add.json</code><a class="headerlink" href="#post-(?i)-admin-exp-add.json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new experiment</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Requires:</th><td class="field-body"><p class="first">A secure cookie obtained by logging in.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>name</strong> (<em>string</em>) &#8211; Name of the experiment</li>
+<li><strong>getaction</strong> (<em>string</em>) &#8211; String of python code for get action code</li>
+<li><strong>setreward</strong> (<em>string</em>) &#8211; String of python code for set reward code</li>
+<li><strong>adviceid</strong> (<em>bool</em>) &#8211; Bool indicating whether adviceIds are used</li>
+<li><strong>hourly</strong> (<em>bool</em>) &#8211; Bool indicating whether the state of Theta should be stored hourly.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A JSON of the form:
+{ id : the assigned experiment id,</p>
+<blockquote>
+<div><p>name : the name of the experiment (checked for duplicates),
+error : (optional) error message }</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Raises AUTH_ERROR:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first last">If no secure cookie available.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="get">
+<dt id="get-(?i)-admin-exp-list.json">
+<code class="descname">GET </code><code class="descname">(?i)/admin/exp/list.json</code><a class="headerlink" href="#get-(?i)-admin-exp-list.json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve a list of experiments running on this server</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Example</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http://example.com/admin/exp/list.json?max=10">http://example.com/admin/exp/list.json?max=10</a></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Requires:</th><td class="field-body"><p class="first">A secure cookie obtained by logging in.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>max</strong> (<em>int</em>) &#8211; Indicating the max length of the list.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A JSON containing a list of {expid : name} pairs</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Raises AUTH_ERROR:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first last">If not secure cookie available.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="get">
+<dt id="get-(?i)-admin-exp-defaults.json">
+<code class="descname">GET </code><code class="descname">(?i)/admin/exp/defaults.json</code><a class="headerlink" href="#get-(?i)-admin-exp-defaults.json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the list with default available experiments.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Example</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http://example.com/admin/exp/defaults.json">http://example.com/admin/exp/defaults.json</a></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Requires:</th><td class="field-body">A secure cookie obtained by logging in.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A JSON with the default experiments.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Raises AUTH_ERROR:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">If no secure cookie available.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="get">
+<dt id="get-(?i)-admin-exp-default-(?P-default_id-[0-9]+)-get.json">
+<code class="descname">GET </code><code class="descname">(?i)/admin/exp/default/(?P&lt;default_id&gt;[0-9]+)/get.json</code><a class="headerlink" href="#get-(?i)-admin-exp-default-(?P-default_id-[0-9]+)-get.json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve properties of a default experiment.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Example</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http://example.com/admin/exp/default/1/get.json">http://example.com/admin/exp/default/1/get.json</a></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Requires:</th><td class="field-body"><p class="first">A secure cookie available by logging in.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>default_id</strong> (<em>int</em>) &#8211; The ID of the default experiment.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A JSON containing the experiment properties.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Raises AUTH_ERROR:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first last">If no secure cookie available.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="get">
+<dt id="get-(?i)-admin-exp-(?P-exp_id-[0-9]+)-get.json">
+<code class="descname">GET </code><code class="descname">(?i)/admin/exp/(?P&lt;exp_id&gt;[0-9]+)/get.json</code><a class="headerlink" href="#get-(?i)-admin-exp-(?P-exp_id-[0-9]+)-get.json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve a specific experiment running on this server</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Example</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http://example.com/admin/exp/1/get.json">http://example.com/admin/exp/1/get.json</a></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Requires:</th><td class="field-body"><p class="first">A secure cookie obtained by logging in.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>exp_id</strong> (<em>int</em>) &#8211; String experiment ID (in Query string)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A JSON containing all the info for the expriment.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Raises AUTH_ERROR:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first last">If no secure cookie available.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="get">
+<dt id="get-(?i)-admin-exp-(?P-exp_id-[0-9]+)-delete.json">
+<code class="descname">GET </code><code class="descname">(?i)/admin/exp/(?P&lt;exp_id&gt;[0-9]+)/delete.json</code><a class="headerlink" href="#get-(?i)-admin-exp-(?P-exp_id-[0-9]+)-delete.json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete an experiment given an experiment id</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Example</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http://example.com/admin/exp/1/delete.json">http://example.com/admin/exp/1/delete.json</a></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Requires:</th><td class="field-body"><p class="first">A secure cookie obtained by logging in.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>exp_id</strong> (<em>int</em>) &#8211; The ID of the experiment to be deleted.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A JSON showing the deleted experiment.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Raises AUTH_ERROR:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first last">if no secure cookie available.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="post">
+<dt id="post-(?i)-admin-exp-(?P-exp_id-[0-9]+)-edit.json">
+<code class="descname">POST </code><code class="descname">(?i)/admin/exp/(?P&lt;exp_id&gt;[0-9]+)/edit.json</code><a class="headerlink" href="#post-(?i)-admin-exp-(?P-exp_id-[0-9]+)-edit.json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve a list of experiments running on this server</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Requires:</th><td class="field-body"><p class="first">A secure cookie obtained by logging in.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>name</strong> (<em>string</em>) &#8211; Name of the experiment</li>
+<li><strong>getaction</strong> (<em>string</em>) &#8211; String of python code for get action code</li>
+<li><strong>setreward</strong> (<em>string</em>) &#8211; String of python code for set reward code</li>
+<li><strong>adviceid</strong> (<em>bool</em>) &#8211; Bool indicating whether adviceIds are used</li>
+<li><strong>hourly</strong> (<em>bool</em>) &#8211; Bool indicating whether the state of Theta should be stored hourly (apscheduler)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A JSON containing error yes / no.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Raises AUTH_ERROR:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first last">If no secure cookie avaiable.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 </div>
 
 
