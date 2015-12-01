@@ -1,0 +1,6 @@
+setup.py
+StreamingBandid.egg-info/PKG-INFO
+StreamingBandid.egg-info/SOURCES.txt
+StreamingBandid.egg-info/dependency_links.txt
+StreamingBandid.egg-info/requires.txt
+StreamingBandid.egg-info/top_level.txt

@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: StreamingBandid
+Version: 0.1
+Summary: Python application to setup and run streaming (contextual) bandit experiments.
+Home-page: https://github.com/MKaptein/streamingbandit
+Author: Maurits Kaptein
+Author-email: UNKNOWN
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
