@@ -28,6 +28,14 @@
         "name": "SciKit Learn",
         "getActionCode":"scikit_getaction.py",
         "setRewardCode":"scikit_setreward.py"
+        },
+    "7":{"name": "JSS intro",
+        "getActionCode":"jss/intro_getaction.py",
+        "setRewardCode":"jss/intro_setreward.py"
+        },
+    "8":{"name": "JSS Thompson sampling",
+        "getActionCode":"jss/thompson_getaction.py",
+        "setRewardCode":"jss/thompson_setreward.py"
         }
     }
 }

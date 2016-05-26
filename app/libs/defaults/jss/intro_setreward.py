@@ -1,0 +1,4 @@
+import libs.base as base
+mean = base.Mean(self.get_theta(key="Treatment", value=self.action["Treatment"]))
+mean.update(self.reward["value"])
+self.set_theta(mean, key="Treatment", value=self.action["Treatment"])
