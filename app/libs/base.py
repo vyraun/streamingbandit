@@ -1,5 +1,6 @@
 import numpy as np
 import random
+import math
 #import json
 #from scipy.optimize import minimize_scalar
 
@@ -156,6 +157,7 @@ class Variance(__strmBase):
             self.value[self.main] = new_value
         else:
             raise ValueError("Variance can not be less than zero!")
+
 
 class Proportion(__strmBase):
     """ Class to represent a proportion using an online estimator.

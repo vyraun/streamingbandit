@@ -29,13 +29,35 @@
         "getActionCode":"scikit_getaction.py",
         "setRewardCode":"scikit_setreward.py"
         },
-    "7":{"name": "JSS intro",
+    "7":{
+        "name": "JSS intro",
         "getActionCode":"jss/intro_getaction.py",
         "setRewardCode":"jss/intro_setreward.py"
         },
-    "8":{"name": "JSS Thompson sampling",
+    "8":{
+        "name": "JSS Thompson sampling",
         "getActionCode":"jss/thompson_getaction.py",
         "setRewardCode":"jss/thompson_setreward.py"
+        },
+    "9":{
+        "name": "JSS LIF",
+        "getActionCode":"jss/lif_getaction.py",
+        "setRewardCode":"jss/lif_setreward.py"
+        },
+    "10":{
+        "name": "JSS optimal",
+        "getActionCode":"jss/optimal_getaction.py",
+        "setRewardCode":"jss/optimal_setreward.py"
+        },
+    "11":{
+        "name": "JSS BTS linear",
+        "getActionCode":"jss/btslin_getaction.py",
+        "setRewardCode":"jss/btslin_setreward.py"
+        },
+    "12":{
+        "name": "JSS Parallel evaluation",
+        "getActionCode":"jss/parallel_getaction.py",
+        "setRewardCode":"jss/parallel_setreward.py"
         }
     }
 }
